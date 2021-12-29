@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <svg class = "svg_Class">
+        <path id = "basic_rectangle" d="M 0 0 L 300 0 L 0 0 z" fill="#86A68D" stroke="#DCF2E1" stroke-width="1" />
+        <!--
+        <circle class = "one-of-point" cx="150px" cy="150px" r="2px" fill="#664c4f" />
+        <circle class = "one-of-point" cx="250px" cy="250px" r="2px" fill="#664c4f"> </circle>
+        -->
+    </svg>
+
+    <hr>
+
+    <button type="submit" id="start_btn" style=" background-color: rgb(229, 230, 173); padding: 10px; border-radius: 10px;">Start</button>
+
+    <button type="submit" id ="create_points" style="margin-left: 20px; background-color: lightblue; padding: 10px; border-radius: 10px;" >Create points</button>
+
+    <div style="display: inline-block; margin-left: 20px; text-align: center;">
+        <div class="switch">
+            <input class="checkbox" type="checkbox" id="scales" name="scales">
+        </div>
+        <label for="scales">RGB</label>
+    </div>
+    <hr>
+    <div>
+        <h3 style="margin-left: 50px;">Explanation</h3>
+        <pre style="font-size:18px ">
+            1. An arbitrary triangle is created (in this case with an area less than 40,000)
+            2. A random point X is generated inside the triangle 
+            3. A segment is laid from point X to one of the vertices of the triangle
+            4. A point is created in the middle of the resulting segment 
+            5. Now it is considered that this is a new point X
+            6. Steps 3 to 5 are repeated (5000 times in this example)
+        </pre>
+    </div>
+    <div>
+        <h3 style="margin-left: 50px;" >Пояснение</h3>
+        <pre style="font-size:18px "> 
+            1. Создается произвольный треугольник (в данном случае с площадью меньше 40000)
+            2. Генерируется случайная точка X внутри треугольника 
+            3. От точки X до одной из вершин треугольника прокладывается отрезок
+            4. На середине полученного отрезка создается точка 
+            5. Теперь считается что это новая точка X
+            6. Повторяются шаги с 3 по 5 (в этом примере 5000 раз)
+        </pre>
+    </div>
+
+
+
+
+<!--
+    <div class="sum"></div>
+
+    <button type="submit" id="submit">Нажми меня</button>
+-->
+
+    <style>
+
+        .svg_Class{
+            margin: 50px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            border-radius: 1em;
+            background-color: #f2dcdf;
+        }
+
+
+
+input[type="checkbox"] {
+    position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  outline: none;
+  background: #c6c6c6;
+  border-radius: 20px;
+  transition: .5s;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+}
+
+input:checked[type="checkbox"] {
+  background: #40e551
+}
+
+input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transition: .5s;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+
+input:checked[type="checkbox"]:before {
+  left: 20px;
+}
+    
+    </style>
+
+    
+    <script src="rectangleAnimation.js"></script>
+</body>
+</html>
